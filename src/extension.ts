@@ -18,8 +18,10 @@ export function activate(context: vscode.ExtensionContext) {
 	let disposable = vscode.commands.registerCommand('externalsvn.start', (e) => {
 		// The code you place here will be executed every time your command is executed
 		// Display a message box to the user
+		const name = path.basename(e.path.substring(1));
+		const paths = e.path.substring(1);
 		exec("TortoiseProc /command:commit /path:%cd% /closeonend:{2}", {
-			cwd: path.dirname(e.path.substring(1))
+			cwd: name.indexOf('.') !== -1 ? path.dirname(paths) : paths
 		});
 	});
 

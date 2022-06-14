@@ -1,10 +1,15 @@
 {
   "name": "externalsvn",
-	"displayName": "",
+	"displayName": "ExternalSvn",
 	"description": "Better External for SVN",
-	"version": "0.0.1",
+	"version": "0.0.2",
+	"publisher": "chendm",
 	"engines": {
 		"vscode": "^1.68.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/chendonming/externalsvn"
 	},
 	"categories": [
 		"Other"
