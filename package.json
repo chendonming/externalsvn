@@ -1,5 +1,5 @@
 {
-  "name": "externalsvn",
+	"name": "externalsvn",
 	"displayName": "ExternalSvn",
 	"description": "Better External for SVN",
 	"version": "0.0.2",
@@ -15,22 +15,30 @@
 		"Other"
 	],
 	"activationEvents": [
-        "*"
+		"*"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
 		"menus": {
-			"explorer/context":[
+			"explorer/context": [
 				{
 					"command": "externalsvn.start",
+					"group": "navigation"
+				},
+				{
+					"command": "externalsvn.update",
 					"group": "navigation"
 				}
 			]
 		},
-		"commands":[
+		"commands": [
 			{
 				"command": "externalsvn.start",
 				"title": "SVN 提交"
+			},
+			{
+				"command": "externalsvn.update",
+				"title": "SVN 更新"
 			}
 		]
 	},

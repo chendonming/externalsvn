@@ -15,7 +15,8 @@ export function activate(context: vscode.ExtensionContext) {
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
 	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('externalsvn.start', (e) => {
+
+	let a = vscode.commands.registerCommand('externalsvn.start', (e) => {
 		// The code you place here will be executed every time your command is executed
 		// Display a message box to the user
 		const name = path.basename(e.path.substring(1));
@@ -23,9 +24,21 @@ export function activate(context: vscode.ExtensionContext) {
 		exec("TortoiseProc /command:commit /path:%cd% /closeonend:{2}", {
 			cwd: name.indexOf('.') !== -1 ? path.dirname(paths) : paths
 		});
-	});
+	})
 
-	context.subscriptions.push(disposable);
+	let b = vscode.commands.registerCommand('externalsvn.update', (e) => {
+		// The code you place here will be executed every time your command is executed
+		// Display a message box to the user
+		const name = path.basename(e.path.substring(1));
+		const paths = e.path.substring(1);
+		exec("TortoiseProc /command:update /path:%cd% /closeonend:{2}", {
+			cwd: name.indexOf('.') !== -1 ? path.dirname(paths) : paths
+		});
+	})
+
+	context.subscriptions.push(
+		a, b
+	);
 }
 
 // this method is called when your extension is deactivated
