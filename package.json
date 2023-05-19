@@ -2,7 +2,7 @@
 	"name": "externalsvn",
 	"displayName": "ExternalSvn",
 	"description": "Better External for SVN",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"publisher": "chendm",
 	"engines": {
 		"vscode": "^1.68.0"
@@ -28,6 +28,10 @@
 				{
 					"command": "externalsvn.update",
 					"group": "navigation"
+				},
+				{
+					"command": "externalsvn.log",
+					"group": "navigation"
 				}
 			]
 		},
@@ -39,6 +43,10 @@
 			{
 				"command": "externalsvn.update",
 				"title": "SVN 更新"
+			},
+			{
+				"command": "externalsvn.log",
+				"title": "SVN 日志"
 			}
 		]
 	},
